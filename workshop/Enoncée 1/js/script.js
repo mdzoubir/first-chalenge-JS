@@ -1,31 +1,25 @@
-var favoriteBooks = ["red", "black", "white"];
-class Bookshelf {
-    constructor() {
-        this.addFavoriteBook();
-        this.printFavoriteBooks();
-    }
-    addFavoriteBook(bookName) {
-        var book = favoriteBooks.includes("Great");
-        console.log(book);
-        if (book !== true) {
-            favoriteBooks.push("Great");
-        } else {
-            console.log("it's aready exist");
-        }
-        console.log(favoriteBooks);
-    }
-    printFavoriteBooks() {
-        var number = favoriteBooks.length;
+var FavoritesBooks = ["red", "black", "white"];
 
-        console.log("livers favoris : " + number);
-        for (const element of favoriteBooks) {
-            console.log(element);
-        }
-        // for (let y = 0; y < favoriteBooks.length; y++) {
-        //     console.log(y + " " + favoriteBooks[y])
-        // }
-        const user = new String("red");
-        console.log(user.toString());
+function addFavoriteBook(bookName) {
+
+    let recherch = FavoritesBooks.includes("Great");
+
+    if (!recherch === true) {
+        FavoritesBooks.push("Graet");
+        console.log(recherch)
+        console.log(FavoritesBooks)
+    } else {
+        console.log("already exists");
     }
 }
-window.onload = new Bookshelf();
+addFavoriteBook();
+
+function printFavoritBooks() {
+    console.log("livers favoris : " + FavoritesBooks[1]);
+    console.log(FavoritesBooks.length);
+    for (let bookName of FavoritesBooks) {
+        console.log(bookName)
+    }
+
+}
+printFavoritBooks();
